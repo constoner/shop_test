@@ -1,0 +1,48 @@
+@import "../mixins.scss";
+
+.header {
+  padding-top: 22px;
+  padding-bottom: 22px;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  &__logo {
+    margin-right: 16px;
+    padding: 10px 0;
+
+    @include focus {
+      outline: solid 2px $color-accent-green;
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    @include hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__input {
+    margin-right: 16px;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-self: stretch;
+    margin: 0;
+    margin-left: -10px;
+    padding: 0;
+    border: none;
+  }
+
+  &__filters label {
+    margin-left: 10px;
+  }
+}

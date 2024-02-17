@@ -1,0 +1,22 @@
+include ./filters.pug
+
+header.header.container
+  div.header__wrapper
+    a(href="./index.html").header__logo
+      img(
+        src="./img/svg/logo.svg",
+        width="172",
+        height="30",
+        alt="Logo of shop."
+        )
+    label(for="search").visually-hidden Search Product
+    input(
+      id="search",
+      type="search",
+      name="search",
+      placeholder="Search for a product, flower, etc"
+      ).header__input.search
+    fieldset.header__filters
+      each button in filtersData
+        +filter(button.name, button.content, button.isChecked, button.isDisabled)
+
