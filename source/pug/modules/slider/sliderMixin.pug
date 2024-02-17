@@ -1,0 +1,14 @@
+mixin slider(title, name, isDouble=false, min, max, valueMin=0, valueMax, size, symbol)
+  .slider
+    p.slider__name= title
+    .slider__el(id='slider-'+ name, data-is-double=isDouble, data-symbol=symbol)
+    .slider__values#values-container
+      if isDouble
+        .slider__value-box
+          label.visually-hidden(for=name + '-min') Min
+          input.slider__input(type="number", id=name + '-min', name=name + '-min', min=min, value=valueMin, size=size)
+          span.slider__symbol= symbol
+      .slider__value-box
+        label.visually-hidden(for=name + '-max') Max
+        input.slider__input(type="number", id=name + '-max', name=name + '-max', max=max, value=valueMax, size=size)
+        span.slider__symbol= symbol

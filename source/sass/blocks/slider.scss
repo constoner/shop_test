@@ -1,0 +1,159 @@
+.slider {
+  width: 255px;
+
+  &__name {
+    margin: 0;
+    margin-bottom: 23px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__values {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 11px;
+
+    :last-of-type {
+      margin-left: auto;
+    }
+  }
+
+  &__value-box {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    @include hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__symbol {
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-txt-dimmed;
+  }
+
+  &__input {
+    padding: 1px 3px;
+    padding-right: 15px;
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-txt-dimmed;
+    text-align: right;
+    background-color: $color-dark-grey;
+    border: 1px solid $color-txt-dimmed;
+    border-radius: 3px;
+
+    &::placeholder {
+      color: $color-txt-dimmed;
+    }
+
+    @include focus {
+      color: $color-txt-white;
+      background-color: $color-grey;
+      outline: none;
+    }
+
+    @include focus {
+      + .slider__symbol {
+        color: $color-txt-white;
+      }
+
+      ::placeholder {
+        display: none;
+      }
+    }
+  }
+}
+
+.slider .slider__el {
+  height: 4px;
+  padding: 0 8px;
+  background-color: $color-grey-secondary;
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.slider .slider__el .noUi-connects {
+  overflow: visible;
+}
+
+.slider .slider__el .noUi-connect {
+  margin: 0 8px;
+  background-color: $color-accent-green;
+  border: none;
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 3px 15px 0 rgba(132, 213, 44, 0.31);
+}
+
+.slider .slider__el .noUi-handle {
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background-image: linear-gradient(150deg, #85d62d 0%, #6bab2b 100%);
+  border-radius: 100%;
+  border: none;
+  box-shadow: inset 3px 5px 12px 0 rgba(255, 255, 255, 0.2),
+    0 10px 27px 0 rgba(30, 29, 46, 0.3);
+
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  .noUi-tooltip {
+    bottom: 25px;
+    padding: 2px 5px;
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-txt-white;
+    background-color: $color-grey-secondary;
+    border: none;
+    border-radius: 3px;
+    opacity: 0;
+
+    &::before {
+      display: block;
+      position: absolute;
+      left: 40%;
+      bottom: -4px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 5px 5px 5px;
+      border-color: transparent transparent $color-grey-secondary transparent;
+      transform: rotate(180deg);
+      content: "";
+    }
+  }
+
+  &:hover {
+    transform: scale(1.25);
+  }
+
+  &:focus-visible {
+    outline: solid 2px $color-accent-green;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(1.1);
+
+    .noUi-tooltip {
+      opacity: 1;
+    }
+  }
+}

@@ -1,81 +1,65 @@
 import noUiSlider from '../vendor/nouislider/nouislider.js';
-
-const slider = document.querySelector('#slider-price');
-const inputMin = document.querySelector('#price-min');
-const inputMax = document.querySelector('#price-max');
-const inputContainer = document.querySelector('#values-container');
-
-const MIN = parseInt(inputMin.min, 10);
-const MAX = parseInt(inputMax.max, 10);
-
-
-const onSliderChange = () => {
-  inputMin.value = Math.round(slider.noUiSlider.get(true)[0]);
-  inputMax.value = Math.round(slider.noUiSlider.get(true)[1]);
-};
-
-const onInputChange = () => {
-  const inputValue = [inputMin.value, inputMax.value];
-
-  if (inputMax.value === '') {
-    inputValue[1] = MAX;
-  }
-
-  slider.noUiSlider.set(inputValue);
-};
-
 const initSlider = () => {
+  const sliderContainers = document.querySelectorAll('.slider');
 
-  noUiSlider.create(slider, {
-    start: [inputMin.value, inputMax.value],
-    connect: true,
-    step: 1,
-    range: {
-      'min': MIN,
+  sliderContainers.forEach((item) => {
+    const slider = item.querySelector('.slider__el');
+
+    const isDouble = slider.dataset.isDouble === '' ? true : false;
+    const tooltipSymbol = slider.dataset.symbol;
+
+    const inputContainer = item.querySelector('.slider__values');
+    const inputs = inputContainer.querySelectorAll('input');
+
+    const inputMin = isDouble ? inputs[0] : null;
+    const inputMax = inputs[inputs.length - 1];
+    const MAX = parseInt(inputMax.max, 10);
+    const MIN = isDouble ? parseInt(inputMin.min, 10) : null;
+
+    const onSliderChange = () => {
+      const values = slider.noUiSlider.get(true);
+      if (isDouble) {
+        inputMin.value = Math.round(values[0]);
+        inputMax.value = Math.round(values[values.length - 1]);
+      } else {
+        inputMax.value = Math.round(values);
+      }
+    };
+
+    const onInputChange = () => {
+      const inputValue = isDouble ? [inputMin.value, inputMax.value] : inputMax.value;
+
+      slider.noUiSlider.set(inputValue);
+    };
+
+    const startSettings = isDouble ? [inputMin.value, inputMax.value] : inputMax.value;
+    const connectSettings = isDouble ? true : [true, false];
+    const rangeSettings = {
+      'min': isDouble ? MIN : 0,
       'max': MAX,
-    },
-    cssClasses: {
-      target: 'target',
-      base: 'base slider__base',
-      origin: 'origin',
-      handle: 'handle slider__handle',
-      handleLower: 'handle-lower',
-      handleUpper: 'handle-upper',
-      touchArea: 'touch-area slider__touch-area',
-      horizontal: 'horizontal',
-      vertical: 'vertical',
-      background: 'background',
-      connect: 'connect slider__connect',
-      connects: 'connects slider__connects',
-      ltr: 'ltr',
-      rtl: 'rtl',
-      textDirectionLtr: 'txt-dir-ltr',
-      textDirectionRtl: 'txt-dir-rtl',
-      draggable: 'draggable',
-      drag: 'state-drag',
-      tap: 'state-tap',
-      active: 'active',
-      tooltip: 'tooltip',
-      pips: 'pips',
-      pipsHorizontal: 'pips-horizontal',
-      pipsVertical: 'pips-vertical',
-      marker: 'marker',
-      markerHorizontal: 'marker-horizontal',
-      markerVertical: 'marker-vertical',
-      markerNormal: 'marker-normal',
-      markerLarge: 'marker-large',
-      markerSub: 'marker-sub',
-      value: 'value',
-      valueHorizontal: 'value-horizontal',
-      valueVertical: 'value-vertical',
-      valueNormal: 'value-normal',
-      valueLarge: 'value-large',
-      valueSub: 'value-sub',
-    },
-  });
+    };
 
-  slider.noUiSlider.on('slide', () => onSliderChange());
-  inputContainer.addEventListener('input', () => onInputChange());
+    if (isDouble) {
+      rangeSettings['75%'] = [250];
+    }
+
+
+    noUiSlider.create(slider, {
+      start: startSettings,
+      connect: connectSettings,
+      step: 1,
+      range: rangeSettings,
+      tooltips: {
+        to: (numericValue) => {
+          return `${numericValue.toFixed(0)} ${tooltipSymbol}`;
+        },
+      },
+    });
+
+    slider.noUiSlider.on('slide', () => onSliderChange());
+    inputContainer.addEventListener('input', () => onInputChange());
+
+  });
 };
 
 export default initSlider;

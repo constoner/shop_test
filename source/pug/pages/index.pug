@@ -1,14 +1,24 @@
 extends ./layout.pug
 
+
 block content
+
+  include ./../modules/slider/sliderMixin.pug
+  include ./../modules/slider/sliderData.pug
+
   .main.container
     .main__settings-wrapper
       .main__settings.settings
-        include ../modules/slider/slider.pug
+
+        each slider in sliderData
+          .settings__item
+            +slider(slider.title, slider.name, slider.isDouble, slider.min, slider.max, slider.valueMin, slider.valueMax, slider.size, slider.symbol)
+
       .main__results-bar
-        p.main__counter
+        p.main__counterp
           span#counter 1034,5 #[span Results]
         .main__badges.badges
+
     .main__wrapper
       .main__accordion.accordion
       .main__content
