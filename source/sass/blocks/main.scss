@@ -1,0 +1,23 @@
+.main {
+  &__settings-wrapper {
+    padding: 0 0 0 15px;
+  }
+
+  &__results-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-family: $ff-main;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__content {
+    flex-grow: 1;
+    margin-left: 28px;
+  }
+}
