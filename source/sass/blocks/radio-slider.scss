@@ -20,7 +20,7 @@
 
   &__wrapper {
     display: flex;
-    margin-left: -4px;
+    margin: 0 -4px;
     margin-top: 7px;
   }
 
@@ -29,7 +29,7 @@
     cursor: pointer;
 
     &:hover .radio-slider__tick {
-      transform: scaleY(1.1842);
+      transform: scaleY(1.18);
     }
 
     &:nth-child(1) .radio-slider__tick {
@@ -39,6 +39,7 @@
     &:nth-child(2) .radio-slider__tick {
       background-color: #dfd05e;
     }
+
     &:nth-child(3) .radio-slider__tick {
       background-color: #cdcb5b;
     }
@@ -82,7 +83,7 @@
   }
 
   &__input:checked + &__tick {
-    transform: scaleY(1.3684);
+    transform: scaleY(1.37);
   }
 
   &__scale {
