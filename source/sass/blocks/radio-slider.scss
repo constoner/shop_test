@@ -1,0 +1,104 @@
+.radio-slider {
+  padding: 6px 0;
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 6px;
+    padding: 0;
+    font-family: $ff-main;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-left: -4px;
+    margin-top: 7px;
+  }
+
+  &__label {
+    padding: 0 4px;
+    cursor: pointer;
+
+    &:hover .radio-slider__tick {
+      transform: scaleY(1.1842);
+    }
+
+    &:nth-child(1) .radio-slider__tick {
+      background-color: #f1d562;
+    }
+
+    &:nth-child(2) .radio-slider__tick {
+      background-color: #dfd05e;
+    }
+    &:nth-child(3) .radio-slider__tick {
+      background-color: #cdcb5b;
+    }
+
+    &:nth-child(4) .radio-slider__tick {
+      background-color: #bdc658;
+    }
+
+    &:nth-child(5) .radio-slider__tick {
+      background-color: #adc255;
+    }
+
+    &:nth-child(6) .radio-slider__tick {
+      background-color: #297019;
+    }
+
+    &:nth-child(7) .radio-slider__tick {
+      background-color: #2d731d;
+    }
+
+    &:nth-child(8) .radio-slider__tick {
+      background-color: #297019;
+    }
+
+    &:nth-child(9) .radio-slider__tick {
+      background-color: #2d731d;
+    }
+
+    &:nth-child(10) .radio-slider__tick {
+      background-color: #297019;
+    }
+  }
+
+  &__tick {
+    position: relative;
+    display: block;
+    width: 4px;
+    height: 19px;
+    transform-origin: 50% 100%;
+    transition: transform 0.2s ease;
+  }
+
+  &__input:checked + &__tick {
+    transform: scaleY(1.3684);
+  }
+
+  &__scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: $color-txt-dimmed;
+    user-select: none;
+  }
+}
