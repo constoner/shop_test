@@ -52,6 +52,14 @@
     border: 1px solid $color-txt-dimmed;
     border-radius: 3px;
 
+    &[data-size="3"] {
+      width: 55px;
+    }
+
+    &[data-size="2"] {
+      width: 42px;
+    }
+
     &::placeholder {
       color: $color-txt-dimmed;
     }
