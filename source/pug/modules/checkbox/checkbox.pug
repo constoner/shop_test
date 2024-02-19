@@ -1,0 +1,5 @@
+mixin checkbox(title, value, isChecked)
+  label.checkbox
+    input.checkbox__input.visually-hidden(type="checkbox", value=value, checked=isChecked)
+    span.checkbox__custom
+    span.checkbox__label= title

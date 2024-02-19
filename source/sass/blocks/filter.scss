@@ -1,0 +1,76 @@
+.filter {
+  position: relative;
+  width: 243px;
+  padding: 1px;
+  background-image: $gradient-border;
+  border-radius: 10px;
+
+  &::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px 0 rgba(132, 213, 44, 0.2);
+    opacity: 0;
+    content: "";
+  }
+
+  &__accordion {
+    position: relative;
+    padding: 15px 0;
+    padding-left: 15px;
+    padding-right: 22px;
+    background-color: $color-grey;
+    background-image: url("/img/background/background-leaf.png");
+    background-repeat: no-repeat;
+    background-position: -105px 210px;
+    border-radius: 9px;
+  }
+
+  &__element {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    &.is-active .filter__button .filter__icon {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__title {
+    font-family: $ff-main;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+  &__icon {
+    width: 12px;
+    height: 7px;
+    transform: rotate(180deg);
+  }
+
+  &__content {
+    padding: 0 2px;
+    margin: 0 -2px;
+  }
+}

@@ -31,8 +31,7 @@
     }
 
     @include focus {
-      opacity: 0.6;
-      outline: solid 1px yellow;
+      outline: solid 1px $color-txt-white;
       outline-offset: 1px;
     }
   }

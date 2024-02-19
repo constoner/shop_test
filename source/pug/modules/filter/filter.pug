@@ -1,0 +1,36 @@
+include ../checkbox/checkbox.pug
+
+.filter
+  .filter__accordion(data-accordion="parent")
+    fieldset.filter__element(data-accordion="element")
+      legend.filter__button(data-accordion="button")
+        span.filter__title Classification
+        svg.filter__icon(width="12" h="7" aria-hidden="true")
+          use(href="./img/sprite.svg#arrow-list")
+      .filter__content(data-accordion="content")
+        +checkbox("100% Indica", "indica-100", true)
+        +checkbox("100% Sativa", "sativa-100", false)
+        +checkbox(">50% Indica", "indica-50", true)
+        +checkbox(">50% Sativa", "sativa-50", false)
+    fieldset.filter__element(data-accordion="element")
+      legend.filter__button(data-accordion="button")
+        span.filter__title Production Method
+        svg.filter__icon(width="12" h="7" aria-hidden="true")
+          use(href="./img/sprite.svg#arrow-list")
+      .filter__content(data-accordion="content")
+        +checkbox("100% Indica", "indica-100", true)
+        +checkbox("100% Sativa", "sativa-100", false)
+        +checkbox(">50% Indica", "indica-50", true)
+        +checkbox(">50% Sativa", "sativa-50", false)
+    fieldset.filter__element(data-accordion="element")
+      legend.filter__button(data-accordion="button")
+        span.filter__title Size
+        svg.filter__icon(width="12" h="7" aria-hidden="true")
+          use(href="./img/sprite.svg#arrow-list")
+      .filter__content(data-accordion="content")
+        +checkbox("100% Indica", "indica-100", true)
+        +checkbox("100% Sativa", "sativa-100", false)
+        +checkbox(">50% Indica", "indica-50", true)
+        +checkbox(">50% Sativa", "sativa-50", false)
+
+

@@ -19,7 +19,7 @@ block content
           include ./../modules/radio-slider/radio-slider.pug
 
       .main__results-bar
-        p.main__counter
+        .main__counter
           span#counter 1034,5 #[span Results]
         ul.main__badge-container
           li.main__badge-item
@@ -46,7 +46,8 @@ block content
             include ./../modules/badge/badge.pug
 
     .main__content
-      .main__accordion.accordion
+      .main__filter
+        include ./../modules/filter/filter.pug
       .main__list
         p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam corporis ad maiores dolorum dolorem doloremque voluptates officia porro ipsa eum maxime saepe minus, neque perferendis? Dignissimos delectus blanditiis cum culpa.
         p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam corporis ad maiores dolorum dolorem doloremque voluptates officia porro ipsa eum maxime saepe minus, neque perferendis? Dignissimos delectus blanditiis cum culpa.

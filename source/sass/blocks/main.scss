@@ -7,7 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px 0;
+    padding: 15px 0;
     font-family: $ff-main;
     font-size: 16px;
     font-weight: 600;
@@ -34,6 +34,11 @@
 
   &__content {
     display: flex;
+    margin-top: 15px;
+  }
+
+  &__filter {
+    flex-grow: 1;
   }
 
   &__list {
