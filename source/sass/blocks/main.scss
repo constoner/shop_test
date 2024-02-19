@@ -1,5 +1,5 @@
 .main {
-  &__wrapper {
+  &__header {
     margin-top: 7px;
   }
 
@@ -7,6 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: -10px;
     padding: 15px 0;
     font-family: $ff-main;
     font-size: 16px;
@@ -15,6 +16,7 @@
 
   &__counter {
     margin-right: 30px;
+    margin-bottom: 10px;
   }
 
   &__badge-container {
@@ -23,7 +25,6 @@
     list-style-type: none;
     margin: 0;
     margin-right: -10px;
-    margin-bottom: -10px;
     padding: 0;
   }
 
@@ -35,14 +36,21 @@
   &__content {
     display: flex;
     margin-top: 15px;
+
+    @media (max-width: 630px) {
+      flex-direction: column;
+    }
   }
 
   &__filter {
+    flex-shrink: 0;
     flex-grow: 1;
+    margin-right: 28px;
   }
 
   &__list {
-    flex-grow: 1;
-    margin-left: 28px;
+    & p {
+      margin: 6px 0;
+    }
   }
 }
