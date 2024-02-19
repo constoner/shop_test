@@ -1,7 +1,13 @@
 .settings {
+  $settings-gap: 27px;
+
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: calc(-1 * $settings-gap);
+  margin-right: calc(-1 * $settings-gap);
 
   &__item {
-    margin-right: 27px;
+    margin-right: $settings-gap;
+    margin-bottom: $settings-gap;
   }
 }
