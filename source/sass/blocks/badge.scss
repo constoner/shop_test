@@ -1,0 +1,39 @@
+.badge {
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+  height: 28px;
+  padding: 5px 8px;
+  background-color: $color-dark-green;
+  border-radius: 20px;
+  box-shadow: inset -5px -5px 16px 0 rgba(138, 138, 138, 0.09);
+
+  &__title {
+    margin-right: 3px;
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+  }
+
+  &__button {
+    display: block;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @include focus {
+      opacity: 0.6;
+      outline: solid 1px yellow;
+      outline-offset: 1px;
+    }
+  }
+}
