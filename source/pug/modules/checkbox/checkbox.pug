@@ -1,4 +1,4 @@
-mixin checkbox(title, value, isChecked)
+mixin checkbox(title, value, isChecked=false)
   label.checkbox
     input.checkbox__input.visually-hidden(type="checkbox", value=value, checked=isChecked)
     span.checkbox__custom
