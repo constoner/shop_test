@@ -21,7 +21,7 @@ const compileStyles = () =>
     .pipe(gulp.dest('build/css'))
     .pipe(csso())
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('build/css', { sourcemaps: true }));
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }));
 
 const compileMinStyles = () =>
   gulp
@@ -36,7 +36,7 @@ const compileMinStyles = () =>
     .pipe(gulp.dest('build/css'))
     .pipe(csso())
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('build/css', { sourcemaps: true }));
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }));
 
 const copyStyles = () =>
   gulp
