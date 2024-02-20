@@ -5,8 +5,9 @@ mixin filterMixin(title, dataArray)
   fieldset.filter__element(data-accordion="element")
     legend.filter__button(data-accordion="button")
       span.filter__title= title
-      svg.filter__icon(width="12", h="7", aria-hidden="true")
-        use(href="./img/sprite.svg#arrow-list")
+      span.filter__icon
+        svg(width="12", h="7", aria-hidden="true")
+          use(href="./img/sprite.svg#arrow-list")
     .filter__content(data-accordion="content")
 
       each item in dataArray

@@ -35,7 +35,7 @@
     padding: 0;
     border: none;
 
-    &.is-active .filter__button .filter__icon {
+    &.is-active svg {
       transform: rotate(0deg);
     }
   }
@@ -64,9 +64,16 @@
   }
 
   &__icon {
-    width: 12px;
-    height: 7px;
-    transform: rotate(180deg);
+    margin-left: auto;
+
+    & svg {
+      display: block;
+      width: 12px;
+      height: 7px;
+      margin: 0;
+      padding: 0;
+      transform: rotate(180deg);
+    }
   }
 
   &__content {
