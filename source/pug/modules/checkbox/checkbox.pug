@@ -1,5 +1,5 @@
 mixin checkbox(title, value, isChecked=false)
   label.checkbox
-    input.checkbox__input.visually-hidden(type="checkbox", value=value, checked=isChecked)
+    input.checkbox__input.visually-hidden(type="checkbox", value=value, checked=isChecked, data-title=title)
     span.checkbox__custom
     span.checkbox__label= title

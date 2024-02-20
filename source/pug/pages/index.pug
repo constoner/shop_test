@@ -6,6 +6,8 @@ block content
   include ./../modules/slider/sliderMixin.pug
   include ./../modules/slider/sliderData.pug
 
+  include ./../modules/badge/badge.pug
+
   .main.container
     h1.visually-hidden Welcome to our Marketplace!
     .main__header
@@ -21,29 +23,11 @@ block content
       .main__results-bar
         .main__counter
           span#counter 1034,5 #[span Results]
-        ul.main__badge-container
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
-          li.main__badge-item
-            include ./../modules/badge/badge.pug
+
+        ul.main__badge-container#badge-container
+          template#badge
+            li.main__badge-item
+              +badge
 
     .main__content
       .main__filter
