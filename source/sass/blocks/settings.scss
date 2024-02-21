@@ -4,10 +4,15 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: calc(-1 * $settings-gap);
-  margin-right: calc(-1 * $settings-gap);
 
   &__item {
     margin-right: $settings-gap;
     margin-bottom: $settings-gap;
+  }
+
+  &__item--sort {
+    align-self: center;
+    margin: 0;
+    margin-left: auto;
   }
 }

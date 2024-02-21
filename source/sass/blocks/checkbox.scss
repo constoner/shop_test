@@ -48,6 +48,7 @@
     font-weight: 400;
     line-height: 100%;
     color: $color-txt-dimmed;
+    user-select: none;
   }
 
   &__input:checked + &__custom + &__label {

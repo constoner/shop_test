@@ -1,5 +1,5 @@
-include ./filtersMixin.pug
-include ./filtersData.pug
+include ./check-btnMixin.pug
+include ./check-btnData.pug
 
 header.header.container
   .header__wrapper
@@ -8,5 +8,5 @@ header.header.container
     label.visually-hidden(for="search") Search Product
     input.header__input.search(id="search", type="search", name="search", placeholder="Search for a product, flower, etc")
     fieldset.header__filters
-      each button in filtersData
-        +filter(button.name, button.content, button.isChecked, button.isDisabled)
+      each button in checkBtnData
+        +check-btnMixin(button.name, button.content, button.isChecked, button.isDisabled)

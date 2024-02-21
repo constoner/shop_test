@@ -2,7 +2,7 @@ mixin slider(title, name, isDouble=false, min, max, valueMin=0, valueMax, size, 
   .slider
     p.slider__name= title
     .slider__el(id='slider-'+ name, data-is-double=isDouble, data-symbol=symbol)
-    .slider__values#values-container
+    .slider__values
       if isDouble
         .slider__value-box
           label.visually-hidden(for=name + '-min') Min

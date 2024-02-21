@@ -9,9 +9,11 @@ const filters = Array.from(filterNodes).reduce((acc, item) => {
   });
 }, {});
 
+filterContainer.querySelector('.filter__element').classList.add('is-active');
+
 const onBadgeClick = (filterArray, badge) => {
   badgeContainer.removeChild(badge);
-  filterArray[badge.dataset.value].node.removeAttribute('checked');
+  filterArray[badge.dataset.value].node.checked = false;
 };
 
 const createBadge = (node) => {
@@ -28,7 +30,7 @@ const createBadge = (node) => {
 
 const onFilterClick = (node) => {
 
-  if (!node.hasAttribute('checked')) {
+  if (!node.checked) {
     const deletedBadge = badgeContainer.querySelector(`*[data-value="${node.value}"]`);
     badgeContainer.removeChild(deletedBadge);
   } else {

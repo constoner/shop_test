@@ -1,0 +1,6 @@
+mixin sortItem(label, value, image)
+  button.sort__type(type="button", data-value=value)
+    span.sort__icon
+      svg(width="24", height="24", aria-hidden="true")
+        use(href="./img/sprite.svg#" + image)
+    span.sort__label= label

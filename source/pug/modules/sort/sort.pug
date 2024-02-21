@@ -1,0 +1,13 @@
+include ./sortData.pug
+include ./sortMixin.pug
+
+.sort
+  button.sort__button#sort-button(type="button", aria-label="select sort type")
+    svg.sort__btn-icon(width="24", height="24", aria-hidden="true")
+      use(href="./img/sprite.svg#sort")
+  .sort__container#sort-container
+    p.sort__title Sort by:
+    ul.sort__list
+      each item in sortData
+        li.sort__item
+          +sortItem(item.label, item.value, item.image)

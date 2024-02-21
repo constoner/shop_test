@@ -1,4 +1,4 @@
-mixin filter(name, content, isChecked, isDisabled)
+mixin check-btnMixin(name, content, isChecked, isDisabled)
   label.check-btn
     input.visually-hidden.check-btn__input(type="checkbox", value=name, checked=isChecked, disabled=isDisabled)
     span.check-btn__body
