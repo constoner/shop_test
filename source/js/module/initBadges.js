@@ -11,7 +11,7 @@ const filters = Array.from(filterNodes).reduce((acc, item) => {
 
 const onBadgeClick = (filterArray, badge) => {
   badgeContainer.removeChild(badge);
-  filterArray[badge.dataset.value].node.checked = false;
+  filterArray[badge.dataset.value].node.removeAttribute('checked');
 };
 
 const createBadge = (node) => {
@@ -28,7 +28,7 @@ const createBadge = (node) => {
 
 const onFilterClick = (node) => {
 
-  if (node.checked !== true) {
+  if (!node.hasAttribute('checked')) {
     const deletedBadge = badgeContainer.querySelector(`*[data-value="${node.value}"]`);
     badgeContainer.removeChild(deletedBadge);
   } else {
