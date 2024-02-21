@@ -50,6 +50,11 @@
     color: $color-txt-dimmed;
   }
 
+  &__input:checked + &__custom + &__label {
+    font-weight: 600;
+    color: $color-txt-white;
+  }
+
   &__input:checked + &__custom::after {
     opacity: 1;
   }
