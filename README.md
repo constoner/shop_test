@@ -1,6 +1,6 @@
 # Верстка // Тестовое задание
 
-> _деплой тут https://constoner.github.io/shop_test/_
+> _деплой тут https://constoner.github.io/shop_test/_<br> > _макет тут https://www.figma.com/file/oade9pxS8wGXjRvJa3pL8H/Untitled?node-id=1-354&t=fGDZJ2QyQDuAHLiN-0_
 
 ## Описание
 
