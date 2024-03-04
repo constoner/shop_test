@@ -24,13 +24,29 @@
     padding-left: 15px;
     padding-right: 22px;
     background-color: $color-grey;
-    background-image: url("./../img/background/background-leaf.png");
-    background-repeat: no-repeat;
-    background-position: -105px 210px;
     border-radius: 9px;
+    overflow: hidden;
+
+    &::before {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      top: 230px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background-image: url("./../img/background/background-leaf.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 0px 0px;
+      opacity: 0.5;
+      content: "";
+    }
   }
 
   &__element {
+    position: relative;
+    z-index: 10;
     width: 100%;
     margin: 0;
     padding: 0;

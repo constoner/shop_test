@@ -2,6 +2,6 @@ mixin check-btnMixin(name, content, isChecked, isDisabled)
   label.check-btn
     input.visually-hidden.check-btn__input(type="checkbox", value=name, checked=isChecked, disabled=isDisabled)
     span.check-btn__body
-      svg.check-btn__icon(width="20", height="20", aria-hidden="true")
+      svg.check-btn__icon(width="26", height="26", aria-hidden="true")
         use(href="./img/sprite.svg#leaf")
       span.check-btn__label= content
